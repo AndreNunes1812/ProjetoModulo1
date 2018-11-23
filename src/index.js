@@ -1,31 +1,10 @@
-import React, {Component} from 'react';
-import { StyleSheet, View , Button} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, View, Button } from 'react-native';
 
-import Todo from './components/Todo'
+import './config/ReactotronConfig';
+import './config/DevToolsConfig';
 
-export default class App extends Component {
-
-  state = {
-    todos: [ { id: 0, text: 'Estudar JavaScript'},
-             { id: 1, text: 'Estudar React Native'},
-           ],
-  }
-
-  addTodo = () => {
-    this.setState({
-      todos: [...this.state.todos, { id: Math.random(), text: 'Estudar React'}]
-    })
-  }
-  
-  render() {
-    return (
-      <View style={styles.container}>
-        {this.state.todos.map(todo => <Todo key={todo.id} title={todo.text} /> )}
-        <Button title="Adcionar todo" onPress={this.addTodo}/>
-      </View>
-    ); 
-  }
-}
+import Todo from './components/Todo';
 
 const styles = StyleSheet.create({
   container: {
@@ -35,3 +14,28 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
 });
+
+
+export default class App extends Component {
+  state = {
+    todos: [{ id: 0, text: 'Estudar JavaScript' },
+      { id: 1, text: 'Estudar React Native' },
+      { id: 2, text: 'Estudar Oracle' },
+    ],
+  }
+
+  addTodo = () => {
+    this.setState({
+      todos: [...this.state.todos, { id: Math.random(), text: 'Estudar React' }],
+    });
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        {this.state.todos.map(todo => <Todo key={todo.id} title={todo.text} />)}
+        <Button title="Adcionar todo" onPress={this.addTodo} />
+      </View>
+    );
+  }
+}
