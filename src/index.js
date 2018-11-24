@@ -18,10 +18,6 @@ const styles = StyleSheet.create({
 
 
 export default class App extends Component {
-
-  constructor(props) {
-    super(props)
-  }
   state = {
     todos: [{ id: 0, text: 'Estudar JavaScript' },
       { id: 1, text: 'Estudar React Native' },
@@ -32,7 +28,7 @@ export default class App extends Component {
   }
 
   addTodo = () => {
-    const { todos } = this.state;
+    // const { todos } = this.state;
     this.setState(todos => [...todos, { id: Math.random(), text: 'Estudar React' }]);
 
     // this.setState({
