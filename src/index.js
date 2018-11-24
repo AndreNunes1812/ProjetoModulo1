@@ -28,12 +28,7 @@ export default class App extends Component {
   }
 
   addTodo = () => {
-    // const { todos } = this.state;
     this.setState(todos => [...todos, { id: Math.random(), text: 'Estudar React' }]);
-
-    // this.setState({
-    //   todos: [...this.state.todos, { id: Math.random(), text: 'Estudar React' }],
-    // });
   }
 
   render() {
